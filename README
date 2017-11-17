@@ -1,0 +1,74 @@
+JEAN Jordan
+VALETTE Léo
+RICM3-GRP2
+
+Projet APF 2016 : systèmes de Lindenmayer
+
+**********************PRINCIPE**********************
+
+Le but de ce projet est d’écrire un programme Ocaml capable de lire et d’interpréter un système de
+Lindenmayer (aussi appelé L-système), qui permet entre autres de modéliser la croissance de végétaux.
+Le concept central des L-Systèmes est la représentation d’une plante par une chaîne de caractères.
+Cela permet de modéliser son évolution, voire sa destruction par des agents pathogènes, au moyen de
+règles de transformations de ces caractères.
+
+*********************FONCTIONNEMENT****************
+
+CE QUI FONCTIONNE :
+- AFFICHAGE EN SORTIE SVG
+- CREATION DE FIGURES A L'AIDE D'UN MOTIF
+- CROISSANCE DE PLANTES A PARTIR D'UNE REGLE
+- MUTATION D'UNE PLANTE A PARTIR D'UNE PROBABILITÉ P
+- GENERATION DE REGLES ALEATOIRES
+- POSSIBILITÉ POUR L'UTILISATEUR D'ENTRER UNE REGLE PAR UNE CHAINE DE CARACTERE AU CLAVIER (ANALYSEUR SYNTAXIQUE)
+- MODELISATION D'UN MOTIF PAR UN TYPE PERMETTANT D'EXCLURE LES MOTIFS NON CONFORMES
+- INTERFACE DANS LE TERMINAL PERMETTANT A L'UTILISATEUR DE DONNER LE NOMBRE D'APPLICATION D'UNE REGLE
+
+NOTE :
+- LE MODULE PILE N'A PAS ETE UTILISE
+
+*********************AIDE EXTERIEURE**************
+
+Monsieur Michaël Périn nous a mis sur la voie pour créer la grammaire permettant d'exclure les motifs non conformes.
+
+********************UTILISATION*******************
+
+- SE PLACER DANS LE REPERTOIRE [RICM3][APF][GROUPE2][PROJET][JEAN,VALETTE]
+- EXECUTER LA COMMANDE make
+- EXECUTER main
+- LAISSEZ VOUS GUIDER PAR LES INSTRUCTIONS DONNÉES DANS LE TERMINAL
+
+VOUS SEREZ AMENÉ À ENTRER DIVERSES VALEURS AFIN DE CRÉER 4 FICHIERS DANS LE REPERTOIRE COURANT CORRESPONDANTS À DES EXEMPLES DE REALISATIONS DE PLANTES.
+
+POUR VOIR LES RESULTATS VOUS POUVEZ OUVRIR LES FICHIERS .SVG AVEC LA COMMANDE see PAR EXEMPLE.
+
+LE FICHIER PRINCIPAL EST main.ml DANS CE FICHIER VOUS POUVEZ MODIFIER DIVERS PARAMETRES SUPPLEMENTAIRES COMME L'AXIOME DES PLANTES.
+
+*******************EXEMPLE D'EXECUTION***********
+
+./main
+
+CE PROGRAMME CREE 4 FICHIERS .svg POUR LES OUVRIR UTILISER LA COMMANDE see <fichier.svg> 
+
+1) Création de la plante d'axiome F et de règle F → F[+F]F[-F]F dans le fichier plante.svg :
+
+Entrer le nombre d'applications de la règle (valeur inférieure à 5 conseillée) :  
+4
+
+2) Création de la mutation de cette plante dans le fichier plante_mutee.svg :
+
+Entrer la probabilité p entre 0 et 1 de mutation de la plante : 0.6
+
+3) Création de la plante d'axiome F et de règle F → m avec (m généré aléatoirement) dans le fichier plante_alea.svg :
+
+Entrer le nombre d'applications de la règle (valeur inférieure à 5 conseillée) :  
+4
+
+4) Création de la plante d'axiome F et de règle F → m, avec m entrée par l'utilisateur dans le fichier plante_perso.svg :
+
+Entrer la règle m à appliquer (les crochets mal crochetés seront ignorés) : 
+F[++[F-F]F]+F            
+
+Entrer le nombre d'applications de la règle (valeur inférieure à 5 conseillée) :  
+4
+
